@@ -6,38 +6,48 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.opera.OperaDriver;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Properties;
+
+import static drivers.paths.DriverPaths.ChromeDriver.*;
 
 public class DriverFactory {
-
-    @Getter
-    public enum Driver {
-        CHROME ("src/main/java/drivers/driverExec/chromedriver.exe", "webdriver.chrome.driver"),
-        FIREFOX ("src/main/java/drivers/driverExec/geckodriver.exe", "webdriver.gecko.driver");
-
-        final String PATH;
-        final String NAME;
-
-        Driver(String PATH, String NAME) {
-            this.PATH = PATH;
-            this.NAME = NAME;
-        }
-    }
-
     private static final ThreadLocal<WebDriver> webDriver = new ThreadLocal<>();
 
-    private static WebDriver createDriver(Driver driverKey) {
-        WebDriver driver = null;
-        String driverName = driverKey.getNAME();
-        String driverPath = driverKey.getPATH();
+    public static WebDriver getDriver() {
+        if (webDriver.get() == null) {
+            webDriver.set(createDriver());
+        }
+        return webDriver.get();
+    }
 
-        switch (driverKey) {
-            case CHROME:
-                System.setProperty(driverName, driverPath);
+    public static String getBrowserType() {
+        String browserType = null;
+
+        try {
+            Properties properties = new Properties();
+            FileInputStream file = new FileInputStream("src/main/java/properties/config.properties");
+            properties.load(file);
+            browserType = properties.getProperty("browser").toLowerCase().trim();
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return browserType;
+    }
+
+
+    private static WebDriver createDriver() {
+        WebDriver driver = null;
+
+        switch (getBrowserType()) {
+            case "chrome":
+                System.setProperty(DRIVER_NAME_CHROME, DRIVER_PATH_CHROME);
                 driver = new ChromeDriver();
                 break;
-            case FIREFOX:
-                System.setProperty(driverName, driverPath);
+            case "firefox":
+                System.setProperty(DRIVER_NAME_FIREFOX, DRIVER_PATH_FIREFOX);
                 driver = new FirefoxDriver();
                 break;
         }

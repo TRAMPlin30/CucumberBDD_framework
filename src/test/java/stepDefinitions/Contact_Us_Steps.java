@@ -1,13 +1,18 @@
 package stepDefinitions;
 
+import drivers.DriverFactory;
 import io.cucumber.java.en.*;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
 import static constants.urls.Urls.Pages.CONTACT_US_PAGE;
+import static drivers.DriverFactory.getDriver;
 
 public class Contact_Us_Steps {
+
+    private WebDriver driver = getDriver();
 
     @Given("I access the webdriver university contact us page")
     public void i_access_the_webdriver_university_contact_us_page() {

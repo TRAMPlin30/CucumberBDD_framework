@@ -1,30 +1,21 @@
 package stepDefinitions.hooks;
 
+import drivers.DriverFactory;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
-import org.openqa.selenium.PageLoadStrategy;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 
-import static drivers.driversPath.Drivers.ChromeDriver.DRIVER_NAME_CHROME;
-import static drivers.driversPath.Drivers.ChromeDriver.DRIVER_PATH_CHROME;
+import static drivers.DriverFactory.cleanUpDriver;
+import static drivers.DriverFactory.getDriver;
 
 public class Hook {
 
-    private WebDriver driver;
-
-    @Before("@contact-us")
+    @Before()
     public void setUp() {
-        System.setProperty(DRIVER_NAME_CHROME, DRIVER_PATH_CHROME);
-        ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.setPageLoadStrategy(PageLoadStrategy.NORMAL);
-        driver = new ChromeDriver(chromeOptions);
-        driver.manage().window().maximize();
+        getDriver();
     }
 
-    @After("@contact-us")
+    @After()
     public void tearDown() {
-        driver.quit();
+        cleanUpDriver();
     }
 }

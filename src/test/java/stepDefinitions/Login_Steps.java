@@ -1,12 +1,17 @@
 package stepDefinitions;
 
+import drivers.DriverFactory;
 import io.cucumber.java.en.*;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
 import static constants.urls.Urls.Pages.LOGIN_PAGE;
+import static drivers.DriverFactory.getDriver;
 
 public class Login_Steps {
+
+    private WebDriver driver = getDriver();
 
     @Given("I access the webdriver university login page")
     public void i_access_the_webdriver_university_login_page() {

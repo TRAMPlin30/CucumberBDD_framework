@@ -6,7 +6,7 @@ import io.cucumber.testng.CucumberOptions;
 @CucumberOptions (
         features = {"classpath:features"},
         glue = {"stepDefinitions"},
-        tags = "@smoke",
+        tags = "@regression",
         plugin = {"pretty", "html:target/cucumber", "json:target/cucumber.json"},
         monochrome = false,
         dryRun = false)
