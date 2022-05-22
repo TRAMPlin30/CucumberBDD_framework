@@ -26,7 +26,7 @@ public class Contact_Us_Steps {
 
     @And("I enter a unique last name")
     public void i_enter_a_unique_last_name() {
-        driver.findElement(By.xpath("//input[@name='last_name']")).sendKeys("Wick");
+        driver.findElement(By.xpath("//input[@name='last_name']555")).sendKeys("Wick");
     }
 
     @And("I enter a unique email address")
