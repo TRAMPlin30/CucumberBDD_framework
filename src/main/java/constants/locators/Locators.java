@@ -16,4 +16,10 @@ public class Locators {
                 SUBMIT_BUTTON = "//input[@value='SUBMIT']",
                 MESSAGE_THANK_YOU = "//div[@id='contact_reply']/h1";
     }
+
+    public interface UploadFile {
+        String  UPLOAD_FILE_PATH_INPUT = "//input[@id='myFile']",
+                BUTTON_LOAD_FILE = "//input[@id='submit-button']";
+
+    }
 }

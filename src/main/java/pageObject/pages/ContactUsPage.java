@@ -9,15 +9,15 @@ import static constants.locators.Locators.ContactUs.*;
 public class ContactUsPage extends BasePage {
 
     @FindBy(xpath = FIRST_NAME_FIELD)
-    public WebElement firstNameField;
+    protected WebElement firstNameField;
     @FindBy(xpath = LAST_NAME_FIELD)
-    public WebElement lastNameField;
+    protected WebElement lastNameField;
     @FindBy(xpath = EMAIL_FIELD)
-    public WebElement emailField;
+    protected WebElement emailField;
     @FindBy(xpath = COMMENT_FIELD)
-    public WebElement commentField;
+    protected WebElement commentField;
     @FindBy(xpath = SUBMIT_BUTTON)
-    public WebElement buttonSubmit;
+    protected WebElement buttonSubmit;
     @FindBy(xpath = MESSAGE_THANK_YOU)
     public static WebElement messageThankYou;
 

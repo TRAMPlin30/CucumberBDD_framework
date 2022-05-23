@@ -35,18 +35,21 @@ public class LoginPageSteps {
 
     @Then("I should be presented with the successful login message")
     public void i_should_be_presented_with_the_successful_login_message() {
+        loginPage.waitAlertIsPresent();
         String ActualMessageSuccess = DriverFactory.getDriver().switchTo().alert().getText();
         Assert.assertEquals(ActualMessageSuccess, EXPECTED_MESSAGE_SUCCESS_LOGIN);
     }
 
     @Then("I should be presented with the unsuccessful login message")
     public void i_should_be_presented_with_the_unsuccessful_login_message() {
+        loginPage.waitAlertIsPresent();
         String ActualMessageFailed = DriverFactory.getDriver().switchTo().alert().getText();
         Assert.assertEquals(ActualMessageFailed, EXPECTED_MESSAGE_FAILED_LOGIN);
     }
 
     @Then("I should be presented with message {}")
     public void I_should_be_presented_with_message(String message) {
+        loginPage.waitAlertIsPresent();
         String ActualMessageSuccess = DriverFactory.getDriver().switchTo().alert().getText();
         Assert.assertEquals(ActualMessageSuccess, message);
     }

@@ -5,7 +5,6 @@ Feature: WebDriver University - Login Page
   Background:
     Given I access the webdriver university login page
 
-
   Scenario: Validate Successful login
     When I enter a username webdriver
     And I enter a password webdriver123

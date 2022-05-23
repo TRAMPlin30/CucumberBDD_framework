@@ -45,4 +45,11 @@ public class BasePage {
                 .pollingEvery(Duration.ofSeconds(2));
         waiter.until(ExpectedConditions.elementToBeClickable(button));
     }
+
+    public void waitAlertIsPresent(){
+        Wait<WebDriver> waiter = new FluentWait<>(driver)
+                .withTimeout(Duration.ofSeconds(10))
+                .pollingEvery(Duration.ofSeconds(2));
+        waiter.until(ExpectedConditions.alertIsPresent());
+    }
 }

@@ -9,11 +9,11 @@ import static constants.locators.Locators.Login.*;
 public class LoginPage extends BasePage {
 
     @FindBy(id = USER_NAME_FIELD)
-    public WebElement userNameField;
+    protected WebElement userNameField;
     @FindBy(id = PASSWORD_FIELD)
-    public WebElement passwordField;
+    protected WebElement passwordField;
     @FindBy(id = LOGIN_BUTTON)
-    public WebElement buttonLogin;
+    protected WebElement buttonLogin;
 
     public LoginPage() {
         super();

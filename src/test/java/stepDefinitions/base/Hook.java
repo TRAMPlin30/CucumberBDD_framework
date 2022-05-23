@@ -27,7 +27,7 @@ public class Hook {
 
             File scrFile = ((TakesScreenshot) getDriver()).getScreenshotAs(OutputType.FILE);
             FileInputStream fileInputStream = new FileInputStream(scrFile);
-            copyFile(fileInputStream, new File("src/main/resources/img/"+scenario.getName()+"-failed-"+"screenshot.png"));
+            copyFile(fileInputStream, new File("src/main/resources/failedTestImage/"+scenario.getName()+"-failed-"+"screenshot.png"));
 
             byte[] screenShot = ((TakesScreenshot) getDriver()).getScreenshotAs(OutputType.BYTES);
             scenario.attach(screenShot, "image/png", "Scenario failed: "+scenario.getName());
