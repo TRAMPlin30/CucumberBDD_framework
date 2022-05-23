@@ -1,7 +1,6 @@
 package pageObject;
 
 import drivers.DriverFactory;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
@@ -40,7 +39,10 @@ public class BasePage {
         waiter.until(ExpectedConditions.visibilityOf(element));
     }
 
-    public void waitButtonIsActive(WebElement button){
-        button.isEnabled();
+    public void waitWebElementIsClickable(WebElement button){
+        Wait<WebDriver> waiter = new FluentWait<>(driver)
+                .withTimeout(Duration.ofSeconds(10))
+                .pollingEvery(Duration.ofSeconds(2));
+        waiter.until(ExpectedConditions.elementToBeClickable(button));
     }
 }

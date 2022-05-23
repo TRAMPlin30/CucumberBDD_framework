@@ -27,31 +27,35 @@ public class ContactUsPage extends BasePage {
 
     public void fillFirstNameField(String name) {
         waitWebElementIsVisible(firstNameField);
+        waitWebElementIsClickable(firstNameField);
         clickElement(firstNameField);
         sendValue(firstNameField, name);
     }
 
     public void fillLastNameField(String name) {
         waitWebElementIsVisible(lastNameField);
+        waitWebElementIsClickable(lastNameField);
         clickElement(lastNameField);
         sendValue(lastNameField, name);
     }
 
     public void fillEmailField(String name) {
         waitWebElementIsVisible(emailField);
+        waitWebElementIsClickable(emailField);
         clickElement(emailField);
         sendValue(emailField, name);
     }
 
     public void fillCommentField(String name) {
         waitWebElementIsVisible(commentField);
+        waitWebElementIsClickable(commentField);
         clickElement(commentField);
         sendValue(commentField, name);
     }
 
     public void clickButtonSubmit() {
         waitWebElementIsVisible(buttonSubmit);
-        waitButtonIsActive(buttonSubmit);
+        waitWebElementIsClickable(buttonSubmit);
         clickElement(buttonSubmit);
     }
 }

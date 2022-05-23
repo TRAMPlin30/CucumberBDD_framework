@@ -21,19 +21,21 @@ public class LoginPage extends BasePage {
 
     public void fillUserNameField(String name) {
         waitWebElementIsVisible(userNameField);
+        waitWebElementIsClickable(userNameField);
         clickElement(userNameField);
         sendValue(userNameField, name);
     }
 
     public void fillPasswordField(String password) {
         waitWebElementIsVisible(passwordField);
+        waitWebElementIsClickable(passwordField);
         clickElement(passwordField);
         sendValue(passwordField, password);
     }
 
     public void clickButtonLogin() {
         waitWebElementIsVisible(buttonLogin);
-        waitButtonIsActive(buttonLogin);
+        waitWebElementIsClickable(buttonLogin);
         clickElement(buttonLogin);
     }
 }
