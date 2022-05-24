@@ -22,4 +22,18 @@ public class Locators {
                 BUTTON_LOAD_FILE = "//input[@id='submit-button']";
 
     }
+
+    public interface HiddenElements {
+        String  NOT_DISPLAYED_ELEMENT = "//h2[text()='Not Displayed']",
+                NOT_DISPLAYED_BUTTON = "//p[text()='CLICK ME!']",
+                MODAL_TITLE_WINDOW_SUCCESS = "//h4[@class='modal-title']",
+                MODAL_TITLE_WINDOW_EASY = "//h4[@class='modal-title'][text()='It’s that Easy!!  Well I think it is.....']",
+                MODAL_TITLE_WINDOW_DONE = "//h4[@class='modal-title'][text()='Well done! the ']",
+                VISIBILITY_HIDDEN_ELEMENT = "//h2[text()='Visibility Hidden']",
+                VISIBILITY_HIDDEN_BUTTON = "button2",
+                ZERO_OPACITY_ELEMENT = "//h2[text()='Zero Opacity']",
+                ZERO_OPACITY_BUTTON = "button3";
+
+
+    }
 }

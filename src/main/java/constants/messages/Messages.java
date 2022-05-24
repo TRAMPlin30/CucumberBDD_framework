@@ -24,4 +24,14 @@ public class Messages {
     public interface UploadFileMessagesFailed {
         String EXPECTED_MESSAGE_FAILED = "You need to select a file to upload!";
     }
+
+    public interface HiddenClickMessage {
+        String  CONGRATS_MESSAGE = "Congratulations!",
+                THAT_EASY_MESSAGE = "It’s that Easy!! Well I think it is.....",
+                THAT_DONE_MESSAGE = "Well done! the Action Move & Click can become very useful!";
+
+
+    }
+
+
 }
