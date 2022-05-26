@@ -2,7 +2,7 @@
 
 Feature: WebDriver University - Contact Us Page
 
-
+  @ignore
   Scenario: Validate Successful Submission - Unique Data
     Given I access the webdriver university contact us page
     When I enter a unique first name
@@ -12,6 +12,7 @@ Feature: WebDriver University - Contact Us Page
     And I click on the submit button
     Then I should be presented with a successful contact us submission message
 
+  @ignore
   Scenario: Validate Successful Submission - Specific Data
     Given I access the webdriver university contact us page
     When I enter a specific first name Joe

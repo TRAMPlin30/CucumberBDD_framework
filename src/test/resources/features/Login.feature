@@ -1,4 +1,4 @@
-@login @regression
+@login @regression @ignore
 
 Feature: WebDriver University - Login Page
 
@@ -11,7 +11,7 @@ Feature: WebDriver University - Login Page
     And I click on the login button
     Then I should be presented with the successful login message
 
-  @smoke
+
   Scenario: Validate UnSuccessful login
     When I enter a username webdriver
     And I enter a password password123
